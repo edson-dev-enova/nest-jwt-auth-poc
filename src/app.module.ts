@@ -11,13 +11,17 @@ import { AppService } from './app.service';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT!,
-      username: process.env.DB_USER,
-      password: process.env.DB_PASS,
-      database: process.env.DB_NAME,
+      url: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false, // necessário para Render + Supabase
+      },      
+      // host: process.env.DB_HOST,
+      // port: +process.env.DB_PORT!,
+      // username: process.env.DB_USER,
+      // password: process.env.DB_PASS,
+      // database: process.env.DB_NAME,
       autoLoadEntities: true,
-      synchronize: true, // ⚠️ só para ambiente de dev
+      synchronize: false, // ⚠️ true só para ambiente de dev
     }),
     UsersModule,
     AuthModule,
