@@ -17,7 +17,27 @@ export class AuthService {
     if (userExists) throw new ConflictException('Email já cadastrado');
 
     const hashed = await bcrypt.hash(data.senha, 10);
-    const user = await this.usersService.create({ ...data, password: hashed });
+    const email = data.email;
+
+    // Gera um token exclusivo para o link de verificação
+    const token = this.jwtService.sign(
+      { email },
+      { expiresIn: '1d' }, // expira em 1 dia
+    );
+
+    const user = await this.usersService.create({
+      email,
+      password: hashed,
+      emailChecked: false,
+      emailToken: token,
+    });
+
+    // Aqui você chamará o envio de e-mail
+    // await this.sendVerificationEmail(user.email, token);
+
+    return { message: 'Usuário criado! Verifique seu e-mail para confirmar.' };
+
+    // const user = await this.usersService.create({ ...data, password: hashed });
     return { id: user.id, email: user.email };
   }
 

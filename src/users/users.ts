@@ -14,6 +14,9 @@ export class User {
   @Column({ default: false })
   emailChecked: boolean;
 
+  @Column({ nullable: true })
+  emailToken: string;
+
   @Column({ default: true })
   twoFactorAuth: boolean;
 
