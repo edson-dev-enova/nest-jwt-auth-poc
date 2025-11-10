@@ -37,16 +37,22 @@ Rodar os comandos de sql
 select * from users;
 ```
 
-* **Swagger**: [http://localhost:8080/swagger/index.html](http://localhost:8080/swagger/index.html)
+### Swagger
 !!! A SER IMPLEMENTADO !!!
 
 ## Testando a API
 
-Exemplo de requisição:
+* **hello world**: [http://localhost:3001](http://localhost:3001)
+* **criar um user**: [http://localhost:3001/auth/register](http://localhost:3001/auth/register)
 
+### para rodar no host
+iniciar a aplicação localmente com:
 ```bash
-curl http://localhost:3000/auth/register
+pnpm start:dev
 ```
+e, depois trocar a posta de 3001 para 3000
+* **hello world**: [http://localhost:3000](http://localhost:3000)
+* **criar um user**: [http://localhost:3000/auth/register](http://localhost:3000/auth/register)
 
 ## Encerrando os containers
 
