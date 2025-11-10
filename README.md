@@ -72,7 +72,7 @@ Isso remove os containers, mas mantém volumes e dados persistidos.
 
 # Repositório e Hospedagem
 
-* **GitHub**: [https://github.com/edson-dev-enova/nest-jwt-auth-poc]
+* **GitHub**: [https://github.com/edson-dev-enova/nest-jwt-auth-poc/tree/develop]
 * **API hospedado em**: [https://nest-jwt-auth-poc.onrender.com]
 * **PostgreSql hospedado em**: [https://neon.com/]
 
