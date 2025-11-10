@@ -1,6 +1,14 @@
 
 # POC JWT Authentication with NestJS
 
+## TODO
+
+* swagger
+* confirmacao de email
+* envio de link para troca de senha
+* 2FA
+* refresh token
+
 ## Serviços
 
 * **API** — aplicação principal em Node + NestJS.
