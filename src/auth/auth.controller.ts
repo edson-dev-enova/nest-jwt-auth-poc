@@ -3,8 +3,6 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dtos/register.dto';
 import { LoginDto } from './dtos/login.dto';
 import { JwtAuthGuard } from './jwt-auth.guard';
-// import { Request } from 'express';
-// import { Req } from '@nestjs/common';
 
 @Controller('auth')
 export class AuthController {
